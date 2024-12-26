@@ -360,7 +360,7 @@ export function DoctorKycComponent() {
               <Controller
                 name="image"
                 control={control}
-                render={({ field }) => (
+                render={() => (
                   <div>
                     <label htmlFor="image" className="block mb-1">
                       Profile Image
@@ -384,7 +384,7 @@ export function DoctorKycComponent() {
               <Controller
                 name="aadhaarFrontImage"
                 control={control}
-                render={({ field }) => (
+                render={() => (
                   <div>
                     <label htmlFor="aadhaarFrontImage" className="block mb-1">
                       Aadhaar Front Image
@@ -412,7 +412,7 @@ export function DoctorKycComponent() {
               <Controller
                 name="aadhaarBackImage"
                 control={control}
-                render={({ field }) => (
+                render={() => (
                   <div>
                     <label htmlFor="aadhaarBackImage" className="block mb-1">
                       Aadhaar Back Image
@@ -440,7 +440,7 @@ export function DoctorKycComponent() {
               <Controller
                 name="certificateImage"
                 control={control}
-                render={({ field }) => (
+                render={() => (
                   <div>
                     <label htmlFor="certificateImage" className="block mb-1">
                       Certificate Image
@@ -468,7 +468,7 @@ export function DoctorKycComponent() {
               <Controller
                 name="qualificationImage"
                 control={control}
-                render={({ field }) => (
+                render={() => (
                   <div>
                     <label htmlFor="qualificationImage" className="block mb-1">
                       Qualification Image
