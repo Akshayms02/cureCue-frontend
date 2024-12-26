@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "sonner";
 
 
-const URL = "https://api.akshayms.site/";
+const URL = "https://api.akshayms.site";
 
 
 const storedUserInfo = localStorage.getItem('userInfo');

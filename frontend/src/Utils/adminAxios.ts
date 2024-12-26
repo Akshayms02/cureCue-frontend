@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://api.akshayms.site/";
+const URL = "https://api.akshayms.site";
 
 const adminAxiosUrl = axios.create({
   baseURL: URL,
