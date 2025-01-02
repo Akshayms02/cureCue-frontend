@@ -36,6 +36,7 @@ export const SocketProvider: React.FC<any> = ({ children }) => {
             console.log("wwww", loggedUser);
 
             const newSocket = io("https://api.akshayms.site", {
+                transports: ["websocket"],
                 query: {
                     userId: loggedUser
                 }
