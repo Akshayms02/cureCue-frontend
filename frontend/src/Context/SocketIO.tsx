@@ -35,7 +35,7 @@ export const SocketProvider: React.FC<any> = ({ children }) => {
         if (loggedUser) {
             console.log("wwww", loggedUser);
 
-            const newSocket = io("http://localhost:5000", {
+            const newSocket = io("https://akshayms.site", {
                 query: {
                     userId: loggedUser
                 }
