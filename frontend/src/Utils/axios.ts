@@ -5,18 +5,12 @@ import { toast } from "sonner";
 const URL = "https://api.akshayms.site";
 
 
-const storedUserInfo = localStorage.getItem('userInfo');
-let userInfo: any
-let userId: any
-if (storedUserInfo) {
-  userInfo = JSON.parse(storedUserInfo);
-  userId = userInfo.userId;
-}
+
 
 const axiosUrl = axios.create({
   baseURL: URL,
   withCredentials: true,
-  headers: userId ? { 'userId': userId } : {},
+
 });
 
 
