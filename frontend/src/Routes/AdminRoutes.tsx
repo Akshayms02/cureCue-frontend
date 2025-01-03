@@ -8,7 +8,8 @@ import AdminUsers from "../Pages/Admin/adminUsers";
 import AdminDocSpecialization from "../Pages/Admin/adminDocSpecialization";
 import DoctorApplications from "../Components/AdminComponents/doctorApplications";
 import DoctorApplicationDetails from "../Components/AdminComponents/doctorApplicationDetails";
-import DoctorViewdetails from "../Components/AdminComponents/doctorViewdetails";
+import DoctorViewdetails from "../Components/AdminComponents/DoctorViewDetails";
+
 
 function AdminRoutes() {
   return (
