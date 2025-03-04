@@ -14,7 +14,7 @@ import {
 import { getDoctorData } from "../../services/doctorServices"
 import { defaultImg } from "../../assets/profile"
 import { useDispatch } from "react-redux"
-import { updateDoctorProfile } from "../../Redux/Actions/doctorActions"
+import { updateDoctorImage, updateDoctorProfile } from "../../Redux/Actions/doctorActions"
 
 interface Department {
   _id: string
@@ -80,8 +80,15 @@ export default function DoctorProfileCard() {
     }
   }
 
-  const handleImageSave = () => {
-    console.log("Image uploaded:", newImage)
+  const handleImageSave =async () => {
+    console.log("Image uploaded:", newImage);
+    if(doctorData){
+      const updateValues={
+        doctorId:doctorData.doctorId,
+        file:newImage
+      }
+      await dispatch(updateDoctorImage(updateValues))
+    }
     // Implement actual image upload logic here
   }
 

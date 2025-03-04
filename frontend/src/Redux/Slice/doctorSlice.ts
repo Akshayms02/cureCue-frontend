@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
   login,
+  updateDoctorImage,
   updateDoctorProfile,
   uploadDoctorData,
 } from "../Actions/doctorActions";
@@ -113,7 +114,12 @@ const doctorSlice = createSlice({
       .addCase(updateDoctorProfile.rejected, (state, action) => {
         state.loading = false;
         state.error = (action.payload as string) || "Login failed";
-      });
+      })
+      .addCase(updateDoctorImage.fulfilled,(state,action)=>{
+        const {doctorInfo}=action.payload;
+        state.doctorInfo=doctorInfo;
+        localStorage.setItem("doctorInfo",JSON.stringify((doctorInfo)))
+      })
   },
 });
 
