@@ -146,15 +146,19 @@ export const updateDoctorProfile = createAsyncThunk(
 );
 export const updateDoctorImage = createAsyncThunk(
   "doctor/updateDoctorImage",
-  async ({ doctorId, file }: any, { rejectWithValue }) => {
+  async (formData: FormData, { rejectWithValue }) => {
     try {
-      const response = await doctorAxiosUrl.put("/api/doctor/updateDoctorProfileImage", {
-        doctorId: doctorId,
-        file
-      });
-
-      console.log("Thunkkkk response:", response.data.response);
-      return response.data.response; // Adjust according to your API response structure
+      const response = await doctorAxiosUrl.put(
+        "/api/doctor/updateDoctorProfileImage",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("Image update response:", response.data);
+      return response.data.response;
     } catch (error: any) {
       if (error.response) {
         const errorMessage = error.response.data.message || "Update failed";

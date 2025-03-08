@@ -80,16 +80,21 @@ export default function DoctorProfileCard() {
     }
   }
 
-  const handleImageSave =async () => {
-    console.log("Image uploaded:", newImage);
-    if(doctorData){
-      const updateValues={
-        doctorId:doctorData.doctorId,
-        file:newImage
+  const handleImageSave = async () => {
+    if (!doctorData || !newImage) return;
+
+    const formData = new FormData();
+    formData.append('image', newImage, newImage.name);
+
+    try {
+      const result = await dispatch(updateDoctorImage(formData));
+      if (result.payload) {
+        window.location.reload(); // Refresh to show new image
       }
-      await dispatch(updateDoctorImage(updateValues))
+      console.log("Image saved successfully.");
+    } catch (error) {
+      console.error("Error saving image:", error);
     }
-    // Implement actual image upload logic here
   }
 
   const toggleEditMode = () => setIsEditing((prev) => !prev)
